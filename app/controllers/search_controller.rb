@@ -1,4 +1,5 @@
 class SearchController < ApplicationController
+  include Scalability
   # All new partners need to be added here!
   @@our_partners = ['www.google.com', 'www.apple.com']
   
