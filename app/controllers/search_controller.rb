@@ -2,7 +2,9 @@ class SearchController < ApplicationController
   # All new partners need to be added here!
   @@our_partners = ['www.google.com', 'www.apple.com']
   
-  def new_search; end
+  def new_search
+    add_magic_scaling_sauce!
+  end
   
   def search_results
     @search = params[:search_request]
