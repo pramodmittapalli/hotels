@@ -8,11 +8,17 @@ class SearchController < ApplicationController
     @search = params[:search_request]
     # First initialize the search by calling all our partners
     call_partners_with_search_request!(@search)
+    # Before getting results, use the Wego secret potion
+    add_magic_scaling_sauce!
     # Wait for results from partners
     @the_big_resultset = get_results_from_partners
   end
   
 private
+  def add_magic_scaling_sauce!
+    true
+  end
+
   def call_partners_with_search_request!(search)
     @@our_partners.each do |partner_code|
       partner = Partner.find_by_code(partner_code)
